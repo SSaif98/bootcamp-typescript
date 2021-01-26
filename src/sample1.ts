@@ -28,3 +28,41 @@ let f= d + 7;   // it can't run as the data type is unknown
     let g = d+8;
  }
 
+ //custom data type
+type Student = {
+    name:string,
+    age: number,
+    courses: string[]
+}
+
+let studentData: Student = {
+    name: 'Saif',
+    age: 23,
+    courses: ['Ai','Js']
+}
+
+let arr:number[]= [1,2,3,4];
+let arr1:string[]= ['s','e',3]   //not allowed
+
+let arr2:[boolean, string, number] = [true, 'saif', 23];
+let arr3:[boolean, string, number]= [true, 'saif', 23,34,56];  //not allowed
+
+let arr4:[boolean, string, ...number[]]= [true, 'saif', 23,34,56];
+
+let arr4:[boolean, string, ...number[]]= [true, 'saif', 23,34,56,'saf']; //not allowed
+
+
+//ReadOnly
+
+const availableCourse: readonly string[]=['a','b','c'];
+availableCourse[1]='d'  //you can't change it
+
+
+//enum = if you want only index of the element
+ enum PIAIC {
+     CNC,
+     iot,
+     BC
+ }
+
+ console.log(PIAIC.BC);  //2
